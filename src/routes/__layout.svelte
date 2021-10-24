@@ -32,6 +32,6 @@
 		<slot />
 	</div>
 	<footer class="text-xs text-center sm:text-right p-4 sm:p-8 mt-16">
-		<a class="text-gray-600" href="mailto:nenadkostic@gmail.com">Contact Me</a>
+		<!-- <a class="text-gray-600" href="mailto:nenadkostic@gmail.com">Contact Me</a> -->
 	</footer>
 </div>
