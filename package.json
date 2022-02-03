@@ -37,5 +37,9 @@
 		"tailwindcss-font-inter": "^2.0.3",
 		"vite": "^2.1.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"svelte-cubed": "^0.2.1",
+		"three": "^0.135.0"
+	}
 }
