@@ -19,7 +19,10 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			fallback: null,
+		}),
+		trailingSlash: 'always',
 		prerender: {
 			default: true
 		}

@@ -3,7 +3,7 @@ type = "webpack"
 account_id = "2c467db700a778331d12d92229c557ae"
 route = "nenadkostic.com/*"
 zone_id = "2c23afacb982f56ce8dd496ef6692047"
-
+compatibility_date = "2022-04-19"
 [site]
 bucket = "./build"
 entry-point = "workers-site"
