@@ -20,7 +20,7 @@ const config = {
 	],
 	kit: {
 		adapter: adapter({
-			fallback: null,
+			fallback: null
 		}),
 		trailingSlash: 'always',
 		prerender: {
