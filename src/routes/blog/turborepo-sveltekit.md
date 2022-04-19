@@ -5,7 +5,7 @@ date: 2022-04-17
 
 What a time for web development. Jobs are in demand and tools are getting faster and more efficient each day. 
 
-Turborepo is one of these tools that was recently released by jared Palmer and
+Turborepo is one of these tools that was recently released by Jared Palmer and
 fine folks from Vercel. Turborepo brings a breeze of fresh air in the javascript tools ecosystem. It
 makes working with a large javascript codebase simple and it might save some energy and money!
 
@@ -92,7 +92,7 @@ This will spawn all of the apps in the project on their designated ports.
 npm run build
 ```
 
-You must be wandering where do you run this commands since each lib or app will have its owm package.json? 
+You must be wandering where do you run this commands since each lib or app will have its own package.json? 
 
 Run all the commands in the root of the monorepo. Turborepo is taking care of it, well actually we did when we configured the pipeline in the turbo.json file above.
 
@@ -100,7 +100,7 @@ I have kept the original examples made with turborepo starter in the Gitlab exam
 
 Turborepo will keep all node_modules required for the packages and apps in the root of monorepo.
 
-Now the best part; cashing!
+Now the best part; caching!
 
 first login than link:
 
@@ -116,4 +116,4 @@ Read more about it in turborepo [docs](https://turborepo.org/docs) and definitel
 [this](https://monorepo.tools/) online resource that goes more into the monorepos world and what
 options are out there.
 
-Thanks Jared Palmer and Vercel for making Turborepo!
+Big thanks too Jared Palmer and Vercel for making Turborepo!
