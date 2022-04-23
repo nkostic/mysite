@@ -5,7 +5,9 @@
 <div class="font-inter h-screen flex flex-col">
 	<header class="flex justify-between mb-4 p-4 sm:p-8">
 		<h1>
-			<a href="/">Nenad Kostic</a>
+			<a
+				href="/">Nenad Kostic</a
+			>
 		</h1>
 		<div class="social">
 			<a href="https://twitter.com/Nesha8x8" alt="Twitter">
@@ -61,3 +63,4 @@
 		<!-- <a class="text-gray-600" href="mailto:nenadkostic@gmail.com">Contact Me</a> -->
 	</footer>
 </div>
+

@@ -9,15 +9,15 @@ What is Turborepo and why you might need it?
 
 Its a toolkit to organize and maintain your JavaScript projects. Want to do something good for your machine, planet earth and your JavaScript code? Try turborepo. Do it like a pro!
 
-Turborepo was recently released by Jared Palmer and fine folks from Vercel. Turborepo brings a
+Turborepo was recently released by Jared Palmer and fine folks from Vercel. This fine product brings a
 breeze of fresh air in the javascript tools ecosystem. Simplicity of setup with the great benefits!
-Reuse node_modules for all your projects and libs, reuse your configurations, mock api, on top of
-that link effortlessly your cloud account and cache 3rd party dependencies; this will save you some
-money and make you a good citizen of earth.
+Reuse node_modules for all your projects and libs, your configurations, mock api, etc. 
+Effortlessly link your cloud account and cache 3rd party dependencies; this will save you some
+money and make you a better developer.
 
-More in detail of this great product in their super awesome [website](https://turborepo.org/).
+Turborepo [website](https://turborepo.org/) is super awesome. Besides great documentation you can find excellent resource links from open source and javascript maintenance domain; make sure you check it out.
 
-As advertised in the title I whipped up the example using svelte and sveltekit with turborepo. This
+As advertised in the title I "whipped" up the example using svelte and sveltekit with turborepo. This
 code can be found [here](https://github.com/nkostic/sites-example).
 
 In a nutshell:
@@ -30,8 +30,8 @@ npx create-turbo@latest
 
 "apps" and "packages" is where our repositories shall be kept.
 
-I went ahead and added two sveltekit sites called nkostic.dev and tehnika8x8.com into "apps" folder
-and as well as small svelte stub library which I named uikit and placed in "packages" folder.
+I went ahead and added two sveltekit sites called "nkostic.dev" and "tehnika8x8.com" into "apps" folder
+and a small svelte "stub" library which I named "uikit" and placed in "packages" folder.
 
 Note: When adding packages make sure they follow npm package guidelines and have package.json so it
 can be imported in apps. Here is the example of package.json for my stub svelte library uikit:
@@ -78,7 +78,7 @@ components are being imported:
 <Button> Test Button </Button>
 ```
 
-Next we need to set up different ports for each repository from "apps" folder so we can ran all the
+Next we need to set up different ports for each repository from "apps" folder so we can run all the
 sites simultaneously. This might be quite handy for some use cases. Update dev command script
 located in the root of the site in their respective package.json:
 
@@ -112,13 +112,36 @@ Turborepo will keep all node_modules required for the packages and apps in the r
 
 Now the best part; caching!
 
-first login than link:
-
 ```
 npx turbo login
 # and then link
 npx turbo link
 ```
+
+<img src="/turborepo-link-step1.png">
+
+We need to authorize with Vercel. We can use github or google profile for authentication so its straight forward one click confirmation upon link.
+
+<img src="/turborepo-link.png">
+
+Try running now
+```sh
+npm run dev
+# or
+npm run build  
+```
+
+<img src="/turborepo-cached.png">
+
+
+In the pipeline you can use "on-fly" turbo with npx:
+```sh
+npx turbo run dev
+# or
+npx turbo run build  
+```
+
+Quick clean and simple!
 
 Read more about turborepo [here](https://turborepo.org/docs) and definitely check out
 [this](https://monorepo.tools/) great online resource that goes more into the monorepos world and

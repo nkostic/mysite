@@ -19,7 +19,5 @@
 		"statusBarItem.remoteForeground": "#e7e7e7"
 	},
 	"peacock.color": "#20436a",
-	"cSpell.words": [
-		"Vercel"
-	]
+	"cSpell.words": ["Vercel"]
 }

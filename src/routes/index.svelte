@@ -36,14 +36,14 @@
 			</div>
 			<div>
 				<p class="mb-4">
-					I work with a group of wonderful people on a fast growing video platform called Vidflex. <a
+					I work with a group of wonderful people on a fast growing video platform called Vidflex. <a class="" 
 						href="https://www.vidflex.com/">Check it out.</a
 					>
 				</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					In the past I have worked on a variety of interesting projects with Frontech Solutions. <a
+					In the past I have worked on a variety of interesting projects with Frontech Solutions. <a class=""
 						href="https://www.frontech.ca/">Check it out.</a
 					>
 				</p>
