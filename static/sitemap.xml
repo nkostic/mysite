@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://www.nenadkostic.com</loc>
+		<priority>0.89</priority>
+		<lastmod>2022-05-22</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nenadkostic.com/blog/turborepo-sveltekit</loc>
+		<priority>0.67</priority>
+		<lastmod>2022-05-22</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nenadkostic.com/blog/new-site</loc>
+		<priority>0.67</priority>
+		<lastmod>2022-05-22</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nenadkostic.com/blog/new-beginnings</loc>
+		<priority>0.67</priority>
+		<lastmod>2022-05-22</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nenadkostic.com/blog/my-developer-tools-recomedations-2022</loc>
+		<priority>0.67</priority>
+		<lastmod>2022-05-22</lastmod>
+	</url>
+</urlset>
