@@ -32,18 +32,18 @@
 				<p class="mb-4">Welcome to my site.</p>
 			</div>
 			<div>
-				<p class="mb-4">I am a Javascript developer currently based in Calgary.</p>
+				<p class="mb-4">I am web developer currently based in Calgary</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					I work with a group of wonderful people on a fast growing video platform called Vidflex. <a class="" 
+					I work with a group of wonderful people on a fast growing video platform called Vidflex. <a class="underline" 
 						href="https://www.vidflex.com/">Check it out.</a
 					>
 				</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					In the past I have worked on a variety of interesting projects with Frontech Solutions. <a class=""
+					In the past I have worked on a variety of interesting projects with Frontech Solutions. <a class="underline"
 						href="https://www.frontech.ca/">Check it out.</a
 					>
 				</p>
