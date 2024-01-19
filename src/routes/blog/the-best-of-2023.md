@@ -149,7 +149,7 @@ Examples from [Daniel Rosenwasser Blog Post](https://devblogs.microsoft.com/type
 
 ## Browsers: Arc, Brave, Edge, Webkit, Firefox and Chrome
 
-<img src="/rundown2023/browsers2023.png" alt="browsers logos 2023" >
+<img src="/rundown2023/Browsers2023.png" alt="browsers logos 2023" >
 
 Browsers for work, browsers for development, browsers for everyone! 
 
