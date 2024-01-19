@@ -36,7 +36,7 @@
 			</div>
 			<div>
 				<p class="mb-4">
-					I work with a group of wonderful people on a fast growing video platform called Vidflex. <a class="underline" 
+					I work with a group of wonderful people on a video platform called Vidflex. <a class="underline" 
 						href="https://www.vidflex.com/">Check it out.</a
 					>
 				</p>
@@ -50,7 +50,7 @@
 			</div>
 		</div>
 		<div class="order-0 sm:order-1 mb-12 sm:mb-0 sm:ml-6 sm:flex-none text-center">
-			<img alt="Profile bust" src="/profile.jpg" class="rounded-full w-48 h-48 bg-hardLime " />
+			<img alt="Profile bust" src="/nenadkostic-2023.jpeg" class="rounded-full w-48 h-48 bg-hardLime " />
 		</div>
 	</div>
 	<div>
