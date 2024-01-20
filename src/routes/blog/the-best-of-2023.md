@@ -14,7 +14,7 @@ Some years are crazier than others, 2023 was wild in my book. Here's a brief run
 
 JavaScript is awesome whatever anyone else say. NextJS and React ecosystem is mind blowing, Vue, Angular and Qwik are awesome! I love them all but I am spoiled with Svelte. Svelte remains my favorite ui making library!
 
-Mid-summer 2023 we witnessed the release of Svelte 4 after four years. The library's evolution brought fewer dependencies, smaller package sizes, and faster builds. The developer experience has been enhanced, making migrations seamless. 
+Mid-summer 2023 we witnessed the release of Svelte 4 after four years. The library's evolution brought fewer dependencies, smaller package sizes, and faster builds. The IDE Author experience has been enhanced and websites are refreshed.
 
 Check out the upgraded websites: [svelte.dev](https://svelte.dev) and [kit.svelte.dev](https://kit.svelte.dev). New REPLs are available [here](https://learn.svelte.dev/). Kudos to svelte community!
 
@@ -22,7 +22,7 @@ Check out the upgraded websites: [svelte.dev](https://svelte.dev) and [kit.svelt
 npx svelte-migrate@latest svelte-4
 ```
 
-To everyone's surprise not long after Svelte 4 release, Svelte 5's announcement and preview arrived, introducing 'Runes' – a feature akin to signals. Experience it [here](https://svelte-5-preview.vercel.app/docs/introduction). Anyone remember how great KnockoutJS was!
+Svelte 5's announcement was made as part of Svelte 4 release notes and the preview arrived later in the year, introducing 'Runes' – a feature akin to signals. Experience it [here](https://svelte-5-preview.vercel.app/docs/introduction). Anyone remember how great KnockoutJS was!
 
 SvelteKit 2.0 is out! Among many upgrades new version integrates Vite 5 and is now offering shallow routing with [pushState](https://kit.svelte.dev/docs/modules#$app-navigation-pushstate) and [replaceState](https://kit.svelte.dev/docs/modules#$app-navigation-replacestate).
 
