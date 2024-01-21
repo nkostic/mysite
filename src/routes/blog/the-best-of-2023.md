@@ -221,7 +221,7 @@ VSCode still my top choice when it comes to coding editor and IDE!
     <img src="/rundown2023/vscode.png" width="50%" alt="vscode logo" >
 </div>
 
-## LLVM's AI and AGI
+## LLM's AI and AGI
 
 <div style="display:flex; justify-content: center;">
     <img src="/rundown2023/chatgpt.png" width="50%" alt="chat gpt logo" >
