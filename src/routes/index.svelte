@@ -46,12 +46,12 @@
 			</div>
 			<div>
 				<p class="mb-4">
-					For many years, I contributed as a Senior Front End Engineer at Worldplay, where I developed for a video platform named Vidflex. <a class="underline" href="https://www.vidflex.com/">Learn more about it here.</a>
+					For many years, I contributed as a Senior Front End Engineer at Worldplay, where I developed for a video platform named Vidflex. <a class="underline" href="https://www.worldplaynetworks.com/">Learn more about it here.</a>
 				</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					For a long time I engaged in a variety of intriguing projects with Frontech Solutions, enhancing my expertise across the stack from architecture solutions to implementation and team leading. <a class="underline" href="https://www.frontech.ca/">Explore.</a>
+					For a long time I engaged in a variety of intriguing projects with Frontech Solutions, enhancing my expertise across the stack from architecture solutions to implementation and team leading. <a class="underline" href="https://frontech.ca/">Explore.</a>
 				</p>
 			</div>
 		</div>
