@@ -10,21 +10,6 @@
 			>
 		</h1>
 		<div class="social flex gap-1">
-			<a href="https://twitter.com/Nesha8x8" alt="X">
-				<svg
-					class="h-5 w-5 mr-1.5 inline"
-					height="16"
-					xmlns="http://www.w3.org/2000/svg" 
-					shape-rendering="geometricPrecision" 
-					text-rendering="geometricPrecision" 
-					image-rendering="optimizeQuality" 
-					fill-rule="evenodd" 
-					clip-rule="evenodd" 
-					viewBox="0 0 512 462.799"
-				>
-					<path fill="currentColor" d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"/>
-				</svg>
-			</a>
 			<a href="https://github.com/nkostic" alt="Github">
 				<svg
 					class="h-5 w-5 mr-1.5 inline"
@@ -38,6 +23,21 @@
 					/></svg
 				>
 			</a>
+			<a href="https://twitter.com/Nesha8x8" alt="X">
+				<svg
+					class="h-5 w-5 mr-1.5 inline"
+					height="16"
+					xmlns="http://www.w3.org/2000/svg"
+					shape-rendering="geometricPrecision"
+					text-rendering="geometricPrecision"
+					image-rendering="optimizeQuality"
+					fill-rule="evenodd"
+					clip-rule="evenodd"
+					viewBox="0 0 512 462.799"
+				>
+					<path fill="currentColor" d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"/>
+				</svg>
+			</a>
 			<a href="https://www.instagram.com/bitjoggler/" alt="Instagram">
 				<svg class="h-5 w-5 mr-1.5 inline" viewbox="0 0 258 258" xmlns="http://www.w3.org/2000/svg">
 					<g>
@@ -47,6 +47,12 @@
 						/>
 					</g>
 				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/nenadkostic/" alt="LinkedIn link">
+        <svg class="h-7 w-7 mr-1.5 inline" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 30 30"
+        style="fill:#1A1A1A;">
+            <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+        </svg>
 			</a>
 		</div>
 	</header>

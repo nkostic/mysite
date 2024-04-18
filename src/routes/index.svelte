@@ -9,14 +9,19 @@
 <script>
 	export let posts;
 
-	const formatDate = (value) => {
-		const date = new Date(value);
-		return new Intl.DateTimeFormat({
-			year: 'numeric',
-			month: 'numeric',
-			day: 'numeric'
-		}).format(date);
-	};
+  const formatDate = (value) => {
+    if (isNaN(Date.parse(value))) {
+        console.error('Invalid date:', value);
+        return value;
+    }
+
+    const date = new Date(value);
+    return new Intl.DateTimeFormat({
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric'
+    }).format(date);
+  };
 </script>
 
 <svelte:head>
@@ -32,20 +37,21 @@
 				<p class="mb-4">Welcome to my site.</p>
 			</div>
 			<div>
-				<p class="mb-4">I am a web developer currently based in Calgary</p>
+				<p class="mb-4">I am a senior software engineer based in Calgary</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					I work with a group of wonderful people on a video platform called Vidflex. <a class="underline"
-						href="https://www.vidflex.com/">Check it out.</a
-					>
+					Currently, I am embarking on an exciting new chapter in my career, collaborating with inspiring colleagues at <a class="underline font-bold text-lg" href="https://www.lumenalta.com/">Lumenalta</a>.
 				</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					In the past, I have worked on a variety of interesting projects with Frontech Solutions. <a class="underline"
-						href="https://www.frontech.ca/">Check it out.</a
-					>
+					For many years, I contributed as a Senior Front End Engineer at Worldplay, where I developed for a video platform named Vidflex. <a class="underline" href="https://www.vidflex.com/">Learn more about it here.</a>
+				</p>
+			</div>
+			<div>
+				<p class="mb-4">
+					For a long time I engaged in a variety of intriguing projects with Frontech Solutions, enhancing my expertise across the stack from architecture solutions to implementation and team leading. <a class="underline" href="https://www.frontech.ca/">Explore.</a>
 				</p>
 			</div>
 		</div>
