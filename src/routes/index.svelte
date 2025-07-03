@@ -9,19 +9,19 @@
 <script>
 	export let posts;
 
-  const formatDate = (value) => {
-    if (isNaN(Date.parse(value))) {
-        console.error('Invalid date:', value);
-        return value;
-    }
+	const formatDate = (value) => {
+		if (isNaN(Date.parse(value))) {
+			console.error('Invalid date:', value);
+			return value;
+		}
 
-    const date = new Date(value);
-    return new Intl.DateTimeFormat({
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric'
-    }).format(date);
-  };
+		const date = new Date(value);
+		return new Intl.DateTimeFormat({
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric'
+		}).format(date);
+	};
 </script>
 
 <svelte:head>
@@ -37,26 +37,38 @@
 				<p class="mb-4">Welcome to my site.</p>
 			</div>
 			<div>
-				<p class="mb-4">I am a senior software engineer based in Calgary</p>
+				<p class="mb-4">I am a senior software engineer based in Calgary.</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					Currently, I am embarking on an exciting new chapter in my career, collaborating with inspiring colleagues at <a class="underline font-bold text-lg" href="https://www.lumenalta.com/">Lumenalta</a>.
+					Currently, I work as a tech lead at <a
+						class="underline font-bold text-lg"
+						href="https://www.lumenalta.com/">Lumenalta</a
+					>, building AWS-based platforms using JavaScript and Go.
 				</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					For many years, I contributed as a Senior Front End Engineer at Worldplay, where I developed for a video platform named Vidflex. <a class="underline" href="https://www.worldplaynetworks.com/">Learn more about it here.</a>
+					For many years, I contributed as a Senior Front End Engineer at Worldplay, where I
+					developed for the video platform Vidflex.
 				</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					For a long time I engaged in a variety of intriguing projects with Frontech Solutions, enhancing my expertise across the stack from architecture solutions to implementation and team leading. <a class="underline" href="https://frontech.ca/">Explore.</a>
+					Earlier, I collaborated with <a class="underline" href="https://frontech.ca/"
+						>Frontech Solutions</a
+					> on a range of interesting projects, helping to design and build successful business platforms
+					across the stack—from architecture to implementation and team leadership.
 				</p>
 			</div>
 		</div>
+
 		<div class="order-0 sm:order-1 mb-12 sm:mb-0 sm:ml-6 sm:flex-none text-center">
-			<img alt="Profile bust" src="/nenadkostic-2023.jpeg" class="rounded-full w-48 h-48 bg-hardLime " />
+			<img
+				alt="Profile bust"
+				src="/nenadkostic-2023.jpeg"
+				class="rounded-full w-48 h-48 bg-hardLime "
+			/>
 		</div>
 	</div>
 	<div>
