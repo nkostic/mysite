@@ -7,7 +7,8 @@
 		"preview": "svelte-kit preview",
 		"deploy": "svelte-kit build && gh-pages -t true -d build",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"publish": "wrangler deploy"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "next",
@@ -35,7 +36,8 @@
 		"svelte-preprocess": "^4.7.1",
 		"tailwindcss": "^2.1.1",
 		"tailwindcss-font-inter": "^2.0.3",
-		"vite": "^2.1.0"
+		"vite": "^2.1.0",
+		"wrangler": "^4.40.0"
 	},
 	"type": "module",
 	"dependencies": {

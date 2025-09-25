@@ -15,8 +15,14 @@
 			return value;
 		}
 
-		const date = new Date(value);
-		return new Intl.DateTimeFormat({
+		// Parse the date and treat it as local date to avoid timezone issues
+		const dateParts = value.split('-');
+		const year = parseInt(dateParts[0]);
+		const month = parseInt(dateParts[1]) - 1; // Month is 0-indexed
+		const day = parseInt(dateParts[2]);
+		const date = new Date(year, month, day);
+		
+		return new Intl.DateTimeFormat('en-US', {
 			year: 'numeric',
 			month: 'numeric',
 			day: 'numeric'
@@ -37,15 +43,23 @@
 				<p class="mb-4">Welcome to my site.</p>
 			</div>
 			<div>
-				<p class="mb-4">I am a senior software engineer based in Calgary.</p>
+				<p class="mb-4">I am a senior software developer based in Calgary.</p>
 			</div>
 			<div>
 				<p class="mb-4">
-					Currently, I work as a tech lead at <a
+					Currently, I work as a staff developer at <br>
+					<a
 						class="underline font-bold text-lg"
-						href="https://www.lumenalta.com/">Lumenalta</a
-					>, building AWS-based platforms using JavaScript and Go.
+						href="https://www.neofinancial.com/">Neo Financial</a
+					>, building the future of Canadian banking with an amazing team of people!
 				</p>
+			</div>
+			<div>
+			<p class="mb-4">
+				Previously, I was part of the amazing team at 
+				<a class="underline font-bold text-md" href="https://www.lumenalta.com/">Lumenalta</a>, 
+				where I had the chance to work alongside brilliant people in a fully remote organization with an inspiring culture.
+			</p>
 			</div>
 			<div>
 				<p class="mb-4">
