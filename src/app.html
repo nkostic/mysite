@@ -19,6 +19,26 @@
 
 		gtag('config', 'UA-6457332-1');
 		</script>
+
+		<!-- Amplitude Analytics -->
+		<script src="https://cdn.amplitude.com/script/62bdefc5508bfe6f83f6669574ca5af3.js"></script>
+		<script>
+		window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+		window.amplitude.init('62bdefc5508bfe6f83f6669574ca5af3', {
+			"fetchRemoteConfig": true,
+			"autocapture": {
+				"attribution": true,
+				"fileDownloads": true,
+				"formInteractions": true,
+				"pageViews": true,
+				"sessions": true,
+				"elementInteractions": true,
+				"networkTracking": true,
+				"webVitals": true,
+				"frustrationInteractions": true
+			}
+		});
+		</script>
 	</head>
 	<body>
 		<div id="svelte">%svelte.body%</div>

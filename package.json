@@ -37,7 +37,7 @@
 		"tailwindcss": "^2.1.1",
 		"tailwindcss-font-inter": "^2.0.3",
 		"vite": "^2.1.0",
-		"wrangler": "^4.40.0"
+		"wrangler": "^4.44.0"
 	},
 	"type": "module",
 	"dependencies": {
