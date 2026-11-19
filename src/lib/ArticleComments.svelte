@@ -170,16 +170,16 @@
 </section>
 
 <style>
-  .comments { margin: 0 0 96px; border: 2px solid; background: #fff; }
-  .comments > header { padding: 28px; display: flex; align-items: end; justify-content: space-between; gap: 24px; border-bottom: 1px solid #cecdc7; }
+  .comments { margin: 0 0 96px; border: 2px solid; background: var(--surface); }
+  .comments > header { padding: 28px; display: flex; align-items: end; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
   header p { margin: 0; font-size: 9px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
   h2 { margin: 0; font-size: clamp(30px, 5vw, 54px); line-height: .9; letter-spacing: -.05em; }
-  .note { max-width: 650px; margin: 0; padding: 22px 28px; color: #555; font-size: 12px; line-height: 1.55; }
-  ol { margin: 0; padding: 0; border-top: 1px solid #cecdc7; list-style: none; }
+  .note { max-width: 650px; margin: 0; padding: 22px 28px; color: var(--muted-strong); font-size: 12px; line-height: 1.55; }
+  ol { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
   li { padding: 24px 28px; }
-  li + li { border-top: 1px solid #cecdc7; }
+  li + li { border-top: 1px solid var(--line); }
   li p { margin: 0 0 12px; white-space: pre-wrap; font: 17px/1.55 Georgia, "Times New Roman", serif; }
-  small { color: #666; font-size: 10px; }
+  small { color: var(--muted); font-size: 10px; }
   @media (max-width: 680px) {
     .comments { margin-bottom: 60px; }
     .comments > header { padding: 22px 18px; }

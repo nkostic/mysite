@@ -38,7 +38,7 @@
 
 <style>
   :global(*) { box-sizing: border-box; }
-  :global(body) { margin: 0; background: #f5f4ef; color: #0b0b0b; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  :global(body) { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
   :global(a) { color: inherit; }
   .site-header { min-height: 84px; padding: 0 48px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 2px solid; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
   .site-header p { margin: 0; }
@@ -59,7 +59,7 @@
   .timeline li + li { border-top: 2px solid; }
   .timeline > li > span { text-transform: uppercase; font-size: 10px; font-weight: 750; letter-spacing: .14em; }
   .timeline h3 { margin: 0 0 8px; font-size: clamp(28px, 3vw, 46px); line-height: 1; letter-spacing: -.05em; }
-  .timeline p { max-width: 650px; margin: 0; color: #696963; line-height: 1.45; }
+  .timeline p { max-width: 650px; margin: 0; color: var(--muted); line-height: 1.45; }
   @media (max-width: 850px) { .intro { grid-template-columns: 1fr 1fr; } .eyebrow { grid-column: 1 / -1; } }
   @media (max-width: 680px) {
     .site-header { min-height: 72px; padding: 0 18px; grid-template-columns: 1fr 1fr; }

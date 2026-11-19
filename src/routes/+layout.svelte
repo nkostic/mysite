@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "../app.css";
   import type { Component, Snippet } from "svelte";
   import { gallery } from "$lib/gallery.svelte";
   import { i18n } from "$lib/i18n/state.svelte";
@@ -18,7 +19,6 @@
 {#if Viewer}<Viewer />{/if}
 
 <style>
-  :global(html) { color-scheme: light; }
   :global(body) { min-width: 320px; }
   :global(:focus-visible) { outline: 3px solid #1185fe !important; outline-offset: 4px !important; }
   :global(main:focus) { outline: 0 !important; }

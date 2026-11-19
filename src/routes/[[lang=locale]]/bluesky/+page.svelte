@@ -80,7 +80,7 @@
 
 <style>
   :global(*) { box-sizing: border-box; }
-  :global(body) { margin: 0; background: #f5f4ef; color: #0b0b0b; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  :global(body) { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
   :global(a) { color: inherit; }
   :global(::selection) { background: #1185fe; color: #fff; }
   .site-header { min-height: 84px; padding: 0 48px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 2px solid; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
@@ -99,7 +99,7 @@
   .post-list { margin: 0; padding: 0; border: 2px solid; list-style: none; }
   .post-list li + li { border-top: 2px solid; }
   .post-link { min-height: 148px; display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: start; padding: 28px 30px; text-decoration: none; transition: background .16s, color .16s; }
-  .post-link:hover { background: #0b0b0b; color: #fff; }
+  .post-link:hover { background: var(--ink); color: var(--on-ink); }
   .number { font-size: 10px; letter-spacing: .12em; }
   .copy { display: flex; flex-direction: column; gap: 14px; }
   .meta { display: flex; align-items: center; gap: 7px; }
