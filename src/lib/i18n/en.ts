@@ -133,6 +133,23 @@ export const en = {
   switcher: {
     aria: "Choose language",
   },
+  gallery: {
+    openImage: (alt: string) => (alt ? `Open image: ${alt}` : "Open image"),
+    viewer: "Image viewer",
+    close: "Close",
+    previous: "Previous image",
+    next: "Next image",
+    zoomIn: "Zoom in",
+    zoomOut: "Zoom out",
+    resetZoom: "Reset zoom",
+    counter: (index: number, total: number) => `Image ${index} of ${total}`,
+    openOriginal: "Open original",
+    thumbnails: "Choose an image",
+    thumbnail: (index: number) => `Show image ${index}`,
+    loading: "Loading image...",
+    failed: "This image could not be loaded.",
+    hint: "Double-tap or scroll to zoom. Swipe or use the arrow keys to move between images.",
+  },
 };
 
 export type Messages = typeof en;

@@ -6,6 +6,7 @@
   import BlueskyProfileTile from "$lib/BlueskyProfileTile.svelte";
   import BlueskyMark from "$lib/BlueskyMark.svelte";
   import ImageWithLoader from "$lib/ImageWithLoader.svelte";
+  import { galleryImages } from "$lib/gallery.svelte";
   import LikesPopover from "$lib/LikesPopover.svelte";
   import { fetchBlueskyThread, type BlueskyPost, type BlueskyReply } from "$lib/bluesky";
 
@@ -187,11 +188,12 @@
       </header>
 
       {#if post.images.length}
-        <div class:single={post.images.length === 1} class="gallery">
+        <div class:single={post.images.length === 1} class="gallery" use:galleryImages>
           {#each post.images as image, index}
             <ImageWithLoader
               src={image.fullsize}
               alt={image.alt || `Photo ${index + 1} of ${post.images.length} shared by ${post.author.displayName}`}
+              caption={image.alt}
               width={image.width}
               height={image.height}
               eager={index === 0}
@@ -270,8 +272,8 @@
                   </header>
                   <p>{reply.text}</p>
                   {#if reply.images.length}
-                    <div class="reply-images">
-                      {#each reply.images as image}<img src={image.thumb} alt={image.alt || `Image posted by ${reply.author.displayName}`} loading="lazy" />{/each}
+                    <div class="reply-images" use:galleryImages>
+                      {#each reply.images as image}<img src={image.thumb} data-full={image.fullsize} data-caption={image.alt} alt={image.alt || `Image posted by ${reply.author.displayName}`} width="220" height="160" loading="lazy" />{/each}
                     </div>
                   {/if}
                   <div class="reply-counts" aria-label="Reply engagement">

@@ -1,8 +1,11 @@
 <script lang="ts">
+  import { i18n } from "$lib/i18n/state.svelte";
+
   let {
     src,
     href = src,
     alt,
+    caption,
     width,
     height,
     eager = false,
@@ -10,6 +13,8 @@
     src: string;
     href?: string;
     alt: string;
+    /** Visible caption in the viewer. Omit when the alt text is only a generic description. */
+    caption?: string;
     width?: number;
     height?: number;
     eager?: boolean;
@@ -21,10 +26,11 @@
 
 <div class="media" class:loaded class:failed style:aspect-ratio={width && height ? `${width} / ${height}` : undefined}>
   {#if !failed}
-    <a {href} target="_blank" rel="noreferrer" aria-label={alt ? `Open image: ${alt}` : "Open attached image"}>
+    <a {href} data-full={href} target="_blank" rel="noreferrer" aria-label={i18n.t.gallery.openImage(alt)}>
       <img
         {src}
         {alt}
+        data-caption={caption ?? ""}
         {width}
         {height}
         loading={eager ? "eager" : "lazy"}

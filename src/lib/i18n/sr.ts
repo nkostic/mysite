@@ -142,4 +142,21 @@ export const sr: Messages = {
   switcher: {
     aria: "Izaberite jezik",
   },
+  gallery: {
+    openImage: (alt: string) => (alt ? `Otvori sliku: ${alt}` : "Otvori sliku"),
+    viewer: "Pregled slika",
+    close: "Zatvori",
+    previous: "Prethodna slika",
+    next: "Sledeća slika",
+    zoomIn: "Uvećaj",
+    zoomOut: "Umanji",
+    resetZoom: "Vrati zumiranje",
+    counter: (index: number, total: number) => `Slika ${index} od ${total}`,
+    openOriginal: "Otvori original",
+    thumbnails: "Izaberite sliku",
+    thumbnail: (index: number) => `Prikaži sliku ${index}`,
+    loading: "Učitavanje slike...",
+    failed: "Slika nije mogla da se učita.",
+    hint: "Dvaput dodirnite ili skrolujte za zumiranje. Prevucite ili koristite strelice za prelazak na drugu sliku.",
+  },
 };

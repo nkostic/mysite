@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import ArticleComments from "$lib/ArticleComments.svelte";
+  import { galleryImages } from "$lib/gallery.svelte";
   import LanguageSwitcher from "$lib/LanguageSwitcher.svelte";
   import PageHead from "$lib/PageHead.svelte";
   import { SITE_ORIGIN } from "$lib/i18n";
@@ -27,7 +28,7 @@
     <p class="summary">{data.post.summary}</p>
   </header>
 
-  <article class="prose">
+  <article class="prose" use:galleryImages>
     <Article />
   </article>
 
