@@ -1,0 +1,41 @@
+/*
+  Colour tokens. Light is the default; dark follows the system setting unless the visitor picked a theme
+  with the toggle (stored in localStorage and applied as html[data-theme] by the inline script in app.html).
+  "ink" is the strong foreground and also the fill of inverted panels, so it swaps with the paper in dark mode.
+*/
+:root {
+  color-scheme: light;
+  --paper: #f5f4ef;
+  --ink: #0b0b0b;
+  --on-ink: #fff;
+  --on-ink-muted: #b7b7b2;
+  --on-ink-placeholder: #9a9a94;
+  --on-ink-line: #333;
+  --on-ink-line-2: #666;
+  --surface: #fff;
+  --surface-soft: #faf9f5;
+  --surface-alt: #ecebe6;
+  --chip: #e7e5dd;
+  --line: #cecdc7;
+  --line-soft: #deddd7;
+  --line-strong: #aaa9a3;
+  --muted: #696963;
+  --muted-strong: #444;
+  --accent: #1185fe;
+  --danger: #a42b22;
+  --danger-on-ink: #f0c8c8;
+  --ok: #176b3a;
+  --ok-dot: #23854a;
+  --code-bg: #0b0b0b;
+  --code-ink: #f5f4ef;
+  --shimmer: rgba(255, 255, 255, .72);
+  --shadow: rgba(0, 0, 0, .12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; --paper: #0e0e0d; --ink: #f5f4ef; --on-ink: #0b0b0b; --on-ink-muted: #55554f; --on-ink-placeholder: #6e6e68; --on-ink-line: #cecdc7; --on-ink-line-2: #8a8984; --surface: #181817; --surface-soft: #131312; --surface-alt: #242422; --chip: #2b2b28; --line: #3a3a36; --line-soft: #2e2e2b; --line-strong: #5a5a55; --muted: #a8a7a1; --muted-strong: #c9c8c2; --accent: #4da3ff; --danger: #ff8f85; --danger-on-ink: #8a2a22; --ok: #6fd596; --ok-dot: #5fcf8a; --code-bg: #1b1b19; --code-ink: #f5f4ef; --shimmer: rgba(255, 255, 255, .08); --shadow: rgba(0, 0, 0, .5); }
+}
+
+:root[data-theme="dark"] { color-scheme: dark; --paper: #0e0e0d; --ink: #f5f4ef; --on-ink: #0b0b0b; --on-ink-muted: #55554f; --on-ink-placeholder: #6e6e68; --on-ink-line: #cecdc7; --on-ink-line-2: #8a8984; --surface: #181817; --surface-soft: #131312; --surface-alt: #242422; --chip: #2b2b28; --line: #3a3a36; --line-soft: #2e2e2b; --line-strong: #5a5a55; --muted: #a8a7a1; --muted-strong: #c9c8c2; --accent: #4da3ff; --danger: #ff8f85; --danger-on-ink: #8a2a22; --ok: #6fd596; --ok-dot: #5fcf8a; --code-bg: #1b1b19; --code-ink: #f5f4ef; --shimmer: rgba(255, 255, 255, .08); --shadow: rgba(0, 0, 0, .5); }
+
+:root[data-theme="light"] { color-scheme: light; }

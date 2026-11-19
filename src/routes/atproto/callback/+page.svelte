@@ -29,9 +29,9 @@
 </main>
 
 <style>
-  :global(body) { margin: 0; background: #f5f4ef; color: #0b0b0b; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  :global(body) { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; }
   main { width: min(680px, calc(100% - 36px)); margin: 0 auto; padding: 18vh 0; }
   .eyebrow { font-size: 10px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
   h1 { margin: 24px 0; font-size: clamp(48px, 9vw, 96px); line-height: .88; letter-spacing: -.07em; text-transform: uppercase; }
-  .error { color: #a42b22; }
+  .error { color: var(--danger); }
 </style>

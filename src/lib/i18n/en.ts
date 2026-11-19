@@ -133,6 +133,10 @@ export const en = {
   switcher: {
     aria: "Choose language",
   },
+  theme: {
+    toLight: "Switch to light theme",
+    toDark: "Switch to dark theme",
+  },
   gallery: {
     openImage: (alt: string) => (alt ? `Open image: ${alt}` : "Open image"),
     viewer: "Image viewer",

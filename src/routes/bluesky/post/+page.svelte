@@ -7,6 +7,7 @@
   import BlueskyMark from "$lib/BlueskyMark.svelte";
   import ImageWithLoader from "$lib/ImageWithLoader.svelte";
   import { galleryImages } from "$lib/gallery.svelte";
+  import ThemeToggle from "$lib/ThemeToggle.svelte";
   import LikesPopover from "$lib/LikesPopover.svelte";
   import { fetchBlueskyThread, type BlueskyPost, type BlueskyReply } from "$lib/bluesky";
 
@@ -168,7 +169,7 @@
 <header class="site-header">
   <a class="mark" href="/" aria-label="NK, Nenad Kostic home">NK</a>
   <p>Bluesky post</p>
-  <a class="back" href="/bluesky/"><span aria-hidden="true">←</span> All posts</a>
+  <div class="header-end"><ThemeToggle /><a class="back" href="/bluesky/"><span aria-hidden="true">←</span> All posts</a></div>
 </header>
 
 <main id="main-content" tabindex="-1">
@@ -297,22 +298,23 @@
 
 <style>
   :global(*) { box-sizing: border-box; }
-  :global(body) { margin: 0; background: #f5f4ef; color: #0b0b0b; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  :global(body) { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
   :global(a) { color: inherit; }
   :global(::selection) { background: #1185fe; color: #fff; }
   .site-header { min-height: 84px; padding: 0 48px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 2px solid; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
   .site-header p { margin: 0; }
+  .header-end { justify-self: end; display: flex; align-items: center; gap: 24px; }
   .mark { width: 42px; height: 42px; border: 2px solid; border-radius: 50%; display: grid; place-items: center; text-decoration: none; letter-spacing: -.05em; }
-  .back { justify-self: end; text-decoration: none; }
+  .back { text-decoration: none; }
   main { width: min(1120px, calc(100% - 96px)); margin: 0 auto; padding: 72px 0 96px; }
-  article { border: 2px solid; background: #fff; }
+  article { border: 2px solid; background: var(--surface); }
   .post-header { padding: clamp(28px, 6vw, 72px); }
   .meta { margin: 0 0 34px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; font-size: 10px; font-weight: 750; letter-spacing: .14em; }
   .text { max-width: 960px; margin: 0; white-space: pre-wrap; font-size: clamp(32px, 5vw, 68px); line-height: 1.03; letter-spacing: -.05em; font-weight: 700; }
   .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; border-top: 2px solid; background: #0b0b0b; }
   .gallery.single { grid-template-columns: 1fr; }
   .external-card { margin: 0; padding: 24px; border-top: 2px solid; display: grid; grid-template-columns: minmax(120px, 240px) 1fr; gap: 24px; align-items: center; text-decoration: none; }
-  .external-card:hover { background: #0b0b0b; color: #fff; }
+  .external-card:hover { background: var(--ink); color: var(--on-ink); }
   .external-card img { width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover; border: 1px solid currentColor; }
   .external-card span { display: flex; flex-direction: column; gap: 9px; }
   .external-card strong { font-size: clamp(22px, 3vw, 36px); line-height: 1.05; }
@@ -320,20 +322,20 @@
   .video-wrap { padding: 24px; border-top: 2px solid; }
   video { width: 100%; max-height: 720px; display: block; background: #0b0b0b; }
   .video-wrap p { margin: 12px 0 0; font-size: 12px; }
-  .engagement { margin: 0; padding: 15px 28px; display: flex; flex-wrap: wrap; gap: 8px 20px; border-top: 1px solid #cecdc7; list-style: none; color: #666; font-size: 11px; }
+  .engagement { margin: 0; padding: 15px 28px; display: flex; flex-wrap: wrap; gap: 8px 20px; border-top: 1px solid var(--line); list-style: none; color: var(--muted); font-size: 11px; }
   .conversation { border-top: 2px solid; }
   .conversation-heading { padding: 28px; display: flex; justify-content: space-between; align-items: end; gap: 24px; }
   .conversation-heading .meta { margin: 0; }
   h2 { margin: 0; font-size: clamp(28px, 4vw, 48px); line-height: 1; letter-spacing: -.05em; }
   .replies { margin: 0; padding: 0; border-top: 2px solid; list-style: none; }
   .replies > li { padding-left: calc(min(var(--reply-depth), 3) * 38px); }
-  .replies > li + li { border-top: 1px solid #b9b8b2; }
-  .reply { padding: 26px 28px; border: 0; border-left: calc(min(var(--reply-depth), 3) * 2px) solid #1185fe; background: transparent; }
+  .replies > li + li { border-top: 1px solid var(--line-strong); }
+  .reply { padding: 26px 28px; border: 0; border-left: calc(min(var(--reply-depth), 3) * 2px) solid var(--accent); background: transparent; }
   .reply header { display: flex; align-items: center; gap: 12px; }
   .reply header img { border-radius: 50%; object-fit: cover; }
   .reply header span { display: flex; flex-direction: column; gap: 3px; }
   .reply header strong { font-size: 14px; }
-  .reply header small, .reply-counts { color: #555; font-size: 11px; }
+  .reply header small, .reply-counts { color: var(--muted-strong); font-size: 11px; }
   .reply > p { margin: 18px 0; max-width: 760px; white-space: pre-wrap; font-size: 18px; line-height: 1.5; }
   .reply-images { display: flex; gap: 8px; margin: 18px 0; overflow-x: auto; }
   .reply-images img { width: min(220px, 70vw); height: 160px; object-fit: cover; }

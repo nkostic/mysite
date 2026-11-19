@@ -2,10 +2,12 @@
   import { page } from "$app/state";
   import { locales, localeMeta, localizePath, stripLocale } from "$lib/i18n";
   import { i18n } from "$lib/i18n/state.svelte";
+  import ThemeToggle from "$lib/ThemeToggle.svelte";
 
   const neutralPath = $derived(stripLocale(page.url.pathname));
 </script>
 
+<div class="controls">
 <nav class="switcher" aria-label={i18n.t.switcher.aria}>
   {#each locales as code, index}
     {#if index > 0}<span aria-hidden="true">/</span>{/if}
@@ -16,10 +18,13 @@
     {/if}
   {/each}
 </nav>
+<ThemeToggle />
+</div>
 
 <style>
+  .controls { display: inline-flex; align-items: center; gap: 16px; }
   .switcher { display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
-  .switcher a { text-decoration: none; color: #696963; }
-  .switcher a:hover { color: #0b0b0b; text-decoration: underline; text-underline-offset: 4px; }
+  .switcher a { text-decoration: none; color: var(--muted); }
+  .switcher a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
   .current { border-bottom: 2px solid; }
 </style>

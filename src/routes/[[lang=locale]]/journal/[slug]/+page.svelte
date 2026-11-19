@@ -45,9 +45,9 @@
 <style>
   :global(*) { box-sizing: border-box; }
   :global(html) { scroll-behavior: smooth; }
-  :global(body) { margin: 0; background: #f5f4ef; color: #0b0b0b; font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  :global(body) { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
   :global(a) { color: inherit; }
-  :global(::selection) { background: #0b0b0b; color: #fff; }
+  :global(::selection) { background: var(--ink); color: var(--on-ink); }
   .site-header { min-height: 84px; padding: 0 48px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 2px solid; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
   .site-header p { margin: 0; }
   .mark { width: 42px; height: 42px; border: 2px solid; border-radius: 50%; display: grid; place-items: center; text-decoration: none; letter-spacing: -.05em; }
@@ -64,9 +64,9 @@
   .prose :global(a) { text-decoration-thickness: 1px; text-underline-offset: 4px; }
   .prose :global(img) { width: calc(100% + 160px); max-width: calc(100vw - 48px); height: auto; margin: 2.5em 0 2.5em 50%; transform: translateX(-50%); filter: saturate(.75); }
   .prose :global(iframe) { width: 100%; max-width: 100%; border: 0; aspect-ratio: 16 / 9; height: auto; }
-  .prose :global(pre) { width: 100%; max-width: 100%; overflow-x: auto; padding: 24px; background: #0b0b0b; color: #f5f4ef; font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .prose :global(pre) { width: 100%; max-width: 100%; overflow-x: auto; padding: 24px; background: var(--code-bg); color: var(--code-ink); font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
   .prose :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85em; }
-  .prose :global(:not(pre) > code) { padding: .15em .35em; background: #e7e5dd; }
+  .prose :global(:not(pre) > code) { padding: .15em .35em; background: var(--chip); }
   .prose :global(blockquote) { margin-left: 0; padding-left: 24px; border-left: 3px solid; font-style: italic; }
   footer { min-height: 104px; margin: 0 48px; border-top: 2px solid; display: flex; align-items: center; justify-content: space-between; text-transform: uppercase; font-size: 11px; letter-spacing: .12em; font-weight: 700; }
   footer a { text-decoration: none; }

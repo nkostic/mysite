@@ -142,6 +142,10 @@ export const sr: Messages = {
   switcher: {
     aria: "Izaberite jezik",
   },
+  theme: {
+    toLight: "Prebaci na svetlu temu",
+    toDark: "Prebaci na tamnu temu",
+  },
   gallery: {
     openImage: (alt: string) => (alt ? `Otvori sliku: ${alt}` : "Otvori sliku"),
     viewer: "Pregled slika",

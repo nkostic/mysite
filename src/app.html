@@ -3,7 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Apply a saved theme before first paint so the page never flashes the wrong colours.
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+          var bg = saved === "dark" ? "#0e0e0d" : "#f5f4ef";
+          document.querySelectorAll('meta[name="theme-color"]').forEach(function (meta) { meta.setAttribute("content", bg); meta.removeAttribute("media"); });
+        }
+      } catch (error) {}
+    </script>
     <meta property="og:image" content="https://nenadkostic.com/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://nenadkostic.com/og.png" />

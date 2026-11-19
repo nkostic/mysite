@@ -9,5 +9,5 @@
 </span>
 
 <style>
-  .mark { display: inline-grid; place-items: center; color: #1185fe; line-height: 0; }
+  .mark { display: inline-grid; place-items: center; color: var(--accent); line-height: 0; }
 </style>
