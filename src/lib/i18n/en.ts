@@ -89,6 +89,7 @@ export const en = {
     heading: "Archive.",
     intro: "Older notes that are no longer listed in the journal. They stay online so existing links keep working.",
     back: "Back to journal",
+    empty: "Nothing has been archived yet.",
   },
   bluesky: {
     title: "Bluesky",

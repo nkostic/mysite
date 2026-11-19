@@ -23,6 +23,7 @@
     <p class="lede">{t.archive.intro}</p>
   </header>
 
+  {#if posts.length === 0}<p class="empty">{t.archive.empty}</p>{/if}
   <ol class="post-list">
     {#each posts as post, index}
       <li>
@@ -65,6 +66,7 @@
   .meta { display: flex; align-items: center; gap: 6px; }
   .summary { color: var(--muted); font-size: 13px; line-height: 1.4; }
   .post-list a:hover .summary { color: var(--on-ink-muted); }
+  .empty { margin: 0; padding: 40px 0; color: var(--muted); }
   .arrow { font-size: 26px; }
   @media (max-width: 850px) { .intro { grid-template-columns: 1fr 1fr; } .eyebrow { grid-column: 1 / -1; } }
   @media (max-width: 680px) {

@@ -98,6 +98,7 @@ export const sr: Messages = {
     heading: "Arhiva.",
     intro: "Starije beleške koje više nisu na spisku u dnevniku. Ostaju dostupne da postojeći linkovi i dalje rade.",
     back: "Nazad na dnevnik",
+    empty: "Još ništa nije arhivirano.",
   },
   bluesky: {
     title: "Bluesky",
