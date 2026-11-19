@@ -52,15 +52,9 @@
   .back { text-decoration: none; }
   main { padding: 16px 48px 80px; }
   .intro { display: grid; grid-template-columns: .4fr 1.1fr .85fr; gap: 28px; align-items: end; padding: 60px 28px 50px 0; }
-  .eyebrow, label, .meta, .provider { text-transform: uppercase; font-size: 10px; font-weight: 750; letter-spacing: .14em; }
+  .eyebrow, .meta { text-transform: uppercase; font-size: 10px; font-weight: 750; letter-spacing: .14em; }
   .eyebrow { align-self: start; margin: 0; }
   h1 { margin: 0; font-size: clamp(72px, 10vw, 150px); line-height: .78; letter-spacing: -.085em; text-transform: uppercase; }
-  label { display: block; margin-bottom: 12px; }
-  .search-row { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; border-bottom: 2px solid; }
-  .search-row > span:first-child { font-size: 28px; }
-  input { min-width: 0; padding: 14px 0; border: 0; background: transparent; font: inherit; font-size: 20px; }
-  input::placeholder { color: var(--muted); opacity: 1; }
-  .search-error { font-size: 12px; color: var(--danger); }
   .post-list { margin: 0; padding: 0; border: 2px solid; list-style: none; }
   .post-list li + li { border-top: 2px solid; }
   .post-list a { min-height: 150px; display: grid; grid-template-columns: 60px 1fr auto; gap: 24px; align-items: center; padding: 26px 30px; text-decoration: none; transition: background .16s, color .16s; }
@@ -68,12 +62,10 @@
   .number { align-self: start; font-size: 10px; letter-spacing: .12em; }
   .copy { display: flex; flex-direction: column; }
   .title { margin: 11px 0 8px; font-size: clamp(28px, 3.5vw, 52px); line-height: .92; letter-spacing: -.055em; font-weight: 750; }
-  .title.social-post { max-width: 900px; font-size: clamp(23px, 2.8vw, 40px); line-height: 1.06; }
   .meta { display: flex; align-items: center; gap: 6px; }
   .summary { color: var(--muted); font-size: 13px; line-height: 1.4; }
   .post-list a:hover .summary { color: var(--on-ink-muted); }
   .arrow { font-size: 26px; }
-  .empty { padding: 40px; }
   @media (max-width: 850px) { .intro { grid-template-columns: 1fr 1fr; } .eyebrow { grid-column: 1 / -1; } }
   @media (max-width: 680px) {
     .site-header { min-height: 72px; padding: 0 18px; grid-template-columns: 1fr 1fr; }
