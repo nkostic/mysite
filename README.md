@@ -1,17 +1,36 @@
-[My site](https://nenadkostic.com)
+# Nenad Kostic — Code & Outside
 
-Built with these gems of modern web development:
+A static Svelte 5 developer journal with a monochrome editorial design, recent writing, Algolia-ready article search, and social links.
 
-- SvelteKit
-- Cloudflare Workers
-- Tailwind CSS
-- MDsveX
+## Local development
 
-Read more about it [here](https://www.solberg.is/sveltekit-blog).
+```sh
+pnpm install
+pnpm dev
+```
 
-[![Powered By Sveltekit](https://img.shields.io/badge/powered%20by-svelte-FF3C02.svg?style=flat&logo=svelte)](https://kit.svelte.dev/)[![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262)
-[![Tailwindcss](https://img.shields.io/badge/Tailwindcss-CSS--Framework-%2338B2AC?logo=tailwindcss)](https://tailwindcss.com)
-[![Postcss](https://img.shields.io/badge/Postcss-style-%23DD3A0A?style=flat&logo=postcss)](https://postcss.org)
-[![SCSS](https://img.shields.io/badge/SCSS-Style-%23CC6699?style=flat&logo=sass)](https://sass-lang.com/)[![Prettier](https://img.shields.io/badge/Prettier-code--formatter-%23F7B93E?style=flat&logo=prettier)](https://prettier.io/)
-[![Eslint](https://img.shields.io/badge/Eslint-linter-%234B32C3?style=flat&logo=eslint)](https://eslint.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://nenadkostic.com)
+## Search configuration
+
+Copy `.env.example` to `.env` and add Algolia's public search-only values. Without them, the homepage automatically uses its local article index.
+
+## Languages
+
+English is served from the site root and Serbian (Latin script) from `/sr/`.
+
+- UI text lives in `src/lib/i18n/en.ts` and `sr.ts`. Add a key to both; TypeScript fails the check if `sr.ts` is missing one.
+- Article metadata (title, summary, tags) lives in `src/lib/posts.ts`. Article bodies are `src/lib/content/posts/<slug>.md` (English) and `<slug>.sr.md` (Serbian).
+- Each page emits `hreflang` alternates and a canonical URL. The sitemap lists both languages, and each language has its own RSS feed (`/feed.xml`, `/sr/feed.xml`).
+- To add a locale, extend `locales` in `src/lib/i18n/index.ts`, `src/params/locale.ts`, and the `Locale` maps in the same file, then add the translated files.
+
+## Production
+
+```sh
+pnpm check
+pnpm build
+```
+
+The static site is written to `dist/client` and served by a Cloudflare Worker with static assets (`wrangler.jsonc`). Pushes to `master` deploy through `.github/workflows/cloudflare-publish.yaml`, which needs the `CF_API_TOKEN` repository secret. Pull requests only run the check and build. Redirects from the previous site's URLs are in `public/_redirects`.
+
+## Feature flags
+
+`src/lib/site-config.ts` controls the Bluesky page, Bluesky posts in the journal feed, and AT Protocol comments. Comments are off until the production steps in `docs/infra-checklist.md` are complete.

@@ -1,32 +1,27 @@
-import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-static';
-import { mdsvex } from 'mdsvex';
-import footnotes from 'remark-footnotes';
-import headings from 'remark-autolink-headings';
-import unwrapImages from 'remark-unwrap-images';
-import slug from 'remark-slug';
+import adapter from "@sveltejs/adapter-static";
+import { mdsvex } from "mdsvex";
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
-	preprocess: [
-		preprocess({
-			postcss: true
-		}),
-		mdsvex({
-			extensions: ['.md'],
-			layout: './src/components/blog-post.svelte',
-			remarkPlugins: [footnotes, slug, headings, unwrapImages]
-		})
-	],
-	kit: {
-		adapter: adapter({
-			fallback: null
-		}),
-		trailingSlash: 'always',
-		prerender: {
-			default: true
-		}
-	}
+  extensions: [".svelte", ".svx", ".md"],
+  preprocess: [mdsvex({ extensions: [".svx", ".md"], highlight: false })],
+  kit: {
+    files: {
+      assets: "public",
+    },
+    prerender: {
+      // "*" covers every route without required parameters. The Serbian pages are listed so the crawler
+      // starts from them too, and the feeds are endpoints that no page links to directly.
+      entries: ["*", "/sr/", "/feed.xml", "/sr/feed.xml", "/sitemap.xml"],
+    },
+    adapter: adapter({
+      pages: "dist/client",
+      assets: "dist/client",
+      fallback: "404.html",
+      precompress: false,
+      strict: true,
+    }),
+  },
 };
 
 export default config;

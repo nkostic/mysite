@@ -1,7 +1,0 @@
-name = "mysite-worker"
-main = "workers-site/index.js"
-account_id = "2c467db700a778331d12d92229c557ae"
-route = "nenadkostic.com/*"
-compatibility_date = "2022-04-19"
-[site]
-bucket = "./build"
