@@ -1,0 +1,19 @@
+{
+  "lexicon": 1,
+  "id": "com.nenadkostic.blog.authComments",
+  "defs": {
+    "main": {
+      "type": "permission-set",
+      "title": "Comment on Nenad Kostic's journal",
+      "detail": "Create, edit, and delete comments stored in your public AT Protocol repository.",
+      "permissions": [
+        {
+          "type": "permission",
+          "resource": "repo",
+          "collection": ["com.nenadkostic.blog.comment"],
+          "action": ["create", "update", "delete"]
+        }
+      ]
+    }
+  }
+}

@@ -1,26 +1,60 @@
 name: cloudflare-publish
 
 on:
+  pull_request:
   push:
     branches:
       - master
   workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v2.1.2
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: '14.x'
+          version: 10
 
-      - run: npm i
-      - run: npm run build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
 
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
+      - run: pnpm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: dist/client
+
+  deploy:
+    # Pull requests only build and check. Deployment happens when master changes.
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: dist/client
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
       - name: Publish on Cloudflare
-        uses: cloudflare/wrangler-action@1.2.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+        run: pnpm exec wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

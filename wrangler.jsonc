@@ -1,0 +1,13 @@
+{
+  // Static assets Worker. `pnpm build` writes the site to dist/client.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mysite-worker",
+  "account_id": "2c467db700a778331d12d92229c557ae",
+  "compatibility_date": "2026-11-01",
+  "routes": [{ "pattern": "nenadkostic.com/*", "zone_name": "nenadkostic.com" }],
+  "assets": {
+    "directory": "./dist/client",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "lexicon": 1,
+  "id": "com.nenadkostic.blog.comment",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "description": "A public comment on an article published by nenadkostic.com.",
+      "record": {
+        "type": "object",
+        "required": ["subject", "text", "createdAt"],
+        "properties": {
+          "subject": {
+            "type": "string",
+            "format": "uri",
+            "description": "The canonical HTTPS or AT URI of the article."
+          },
+          "parent": {
+            "type": "string",
+            "format": "at-uri",
+            "description": "The AT URI of a parent comment."
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 3000,
+            "maxGraphemes": 1000
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          }
+        }
+      }
+    }
+  }
+}

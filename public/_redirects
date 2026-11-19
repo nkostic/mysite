@@ -1,0 +1,18 @@
+# Permanent redirects from every URL the previous site published.
+# /blog/<slug> was the original path; RSS also linked to /<slug>.
+/blog/turborepo-with-svelte /journal/turborepo-sveltekit/ 301
+/blog/my-web-dev-tools-recommendations-for-2022 /journal/my-developer-tools-recomedations-2022/ 301
+/blog/neo /journal/neo/ 301
+/blog/lumenalta /journal/lumenalta/ 301
+/blog/the-best-of-2023 /journal/the-best-of-2023/ 301
+/blog/turborepo-sveltekit /journal/turborepo-sveltekit/ 301
+/blog/my-developer-tools-recomedations-2022 /journal/my-developer-tools-recomedations-2022/ 301
+/blog/new-site /journal/new-site/ 301
+/blog/new-beginnings /journal/new-beginnings/ 301
+/neo /journal/neo/ 301
+/lumenalta /journal/lumenalta/ 301
+/the-best-of-2023 /journal/the-best-of-2023/ 301
+/turborepo-sveltekit /journal/turborepo-sveltekit/ 301
+/my-developer-tools-recomedations-2022 /journal/my-developer-tools-recomedations-2022/ 301
+/new-site /journal/new-site/ 301
+/new-beginnings /journal/new-beginnings/ 301

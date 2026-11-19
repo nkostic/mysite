@@ -1,0 +1,14 @@
+{
+  "client_id": "https://nenadkostic.com/oauth-client-metadata.json",
+  "client_name": "Nenad Kostic journal",
+  "client_uri": "https://nenadkostic.com",
+  "logo_uri": "https://nenadkostic.com/og.png",
+  "policy_uri": "https://nenadkostic.com/bluesky/privacy/",
+  "redirect_uris": ["https://nenadkostic.com/bluesky/post/", "https://nenadkostic.com/atproto/callback/"],
+  "scope": "atproto repo:app.bsky.feed.post repo:com.nenadkostic.blog.comment?action=create&action=update&action=delete",
+  "grant_types": ["authorization_code", "refresh_token"],
+  "response_types": ["code"],
+  "token_endpoint_auth_method": "none",
+  "application_type": "web",
+  "dpop_bound_access_tokens": true
+}
