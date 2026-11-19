@@ -1,5 +1,5 @@
 import { SITE_ORIGIN, locales, localeMeta, localizePath } from "$lib/i18n";
-import { slugs } from "$lib/posts";
+import { hasArchive, slugs } from "$lib/posts";
 import { siteConfig } from "$lib/site-config";
 import type { RequestHandler } from "./$types";
 
@@ -10,6 +10,7 @@ const paths = [
   "/",
   "/about/",
   "/journal/",
+  ...(hasArchive ? ["/archive/"] : []),
   ...(siteConfig.features.blueskyPage ? ["/bluesky/"] : []),
   ...slugs.map((slug) => `/journal/${slug}/`),
 ];

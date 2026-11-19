@@ -5,7 +5,7 @@
   import PageHead from "$lib/PageHead.svelte";
   import { articleEntries, fetchBlueskyPosts, sortJournalEntries, type BlueskyPost, type JournalEntry } from "$lib/bluesky";
   import { i18n } from "$lib/i18n/state.svelte";
-  import { getPosts } from "$lib/posts";
+  import { getPosts, hasArchive } from "$lib/posts";
   import { localSearch, searchPosts } from "$lib/search";
   import { siteConfig } from "$lib/site-config";
 
@@ -108,6 +108,7 @@
       <li class="empty">{t.journal.empty(query)}</li>
     {/each}
   </ol>
+  {#if hasArchive}<p class="archive-link"><a href={i18n.path("/archive/")}>{t.archive.link} <span aria-hidden="true">→</span></a></p>{/if}
 </main>
 
 <style>
@@ -144,6 +145,7 @@
   .post-list a:hover .summary { color: var(--on-ink-muted); }
   .arrow { font-size: 26px; }
   .empty { padding: 40px; }
+  .archive-link { margin: 28px 0 0; text-align: right; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
   @media (max-width: 850px) { .intro { grid-template-columns: 1fr 1fr; } .eyebrow { grid-column: 1 / -1; } }
   @media (max-width: 680px) {
     .site-header { min-height: 72px; padding: 0 18px; grid-template-columns: 1fr 1fr; }

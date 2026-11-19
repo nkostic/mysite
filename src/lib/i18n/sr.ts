@@ -87,6 +87,17 @@ export const sr: Messages = {
     journalLabel: "Dnevnik",
     backToJournal: "Nazad na dnevnik",
     unavailable: "Članak nije dostupan.",
+    archivedNotice: "Ovaj članak je arhiviran. Ostaje ovde da linkovi i dalje rade, ali može biti zastareo.",
+  },
+  archive: {
+    link: "Arhiva",
+    title: "Arhiva",
+    description: "Stariji članci Nenada Kostića koji više nisu na spisku u dnevniku.",
+    headerLabel: "Arhiva",
+    eyebrow: "Povučeno iz dnevnika",
+    heading: "Arhiva.",
+    intro: "Starije beleške koje više nisu na spisku u dnevniku. Ostaju dostupne da postojeći linkovi i dalje rade.",
+    back: "Nazad na dnevnik",
   },
   bluesky: {
     title: "Bluesky",
