@@ -32,6 +32,7 @@
   "dependencies": {
     "@atproto/api": "0.20.41",
     "@atproto/oauth-client-browser": "0.5.2",
-    "@icons-pack/svelte-simple-icons": "7.2.0"
+    "@icons-pack/svelte-simple-icons": "7.2.0",
+    "mermaid": "11.17.0"
   }
 }

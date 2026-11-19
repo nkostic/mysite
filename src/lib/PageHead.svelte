@@ -1,14 +1,14 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import { SITE_ORIGIN, locales, localeMeta, localizePath, localeFromPathname, stripLocale } from "$lib/i18n";
+  import { SITE_ORIGIN, locales, localeMeta, localizePath, localeFromPathname, stripLocale, type Locale } from "$lib/i18n";
 
   let {
     title,
     description,
     type = "website",
     noindex = false,
-    alternates = true,
-  }: { title: string; description: string; type?: "website" | "article"; noindex?: boolean; alternates?: boolean } = $props();
+    available = [...locales],
+  }: { title: string; description: string; type?: "website" | "article"; noindex?: boolean; available?: Locale[] } = $props();
 
   const locale = $derived(localeFromPathname(page.url.pathname));
   const neutralPath = $derived(stripLocale(page.url.pathname));
@@ -28,8 +28,8 @@
   <link rel="canonical" href={canonical} />
   <link rel="alternate" type="application/rss+xml" title="RSS" href={localizePath(locale, "/feed.xml")} />
   {#if noindex}<meta name="robots" content="noindex" />{/if}
-  {#if alternates}
-    {#each locales as code}
+  {#if available.length > 1}
+    {#each available as code}
       <link rel="alternate" hreflang={localeMeta[code].htmlLang} href={`${SITE_ORIGIN}${localizePath(code, neutralPath)}`} />
       {#if code !== locale}<meta property="og:locale:alternate" content={localeMeta[code].ogLocale} />{/if}
     {/each}

@@ -5,6 +5,7 @@ import type { EntryGenerator, PageLoad } from "./$types";
 // Legacy URLs from earlier versions of the site. Cloudflare serves real 301s from public/_redirects;
 // this route is the fallback for hosts that ignore that file.
 const aliases: Record<string, string> = {
+  "ai-tools-i-use-today": "ai-tools-in-2026",
   "turborepo-with-svelte": "turborepo-sveltekit",
   "my-web-dev-tools-recommendations-for-2022": "my-developer-tools-recomedations-2022",
 };

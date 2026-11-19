@@ -12,10 +12,73 @@ export type Post = {
 };
 
 type Translation = { title: string; summary: string; tags: string[] };
-type PostSource = { slug: string; date: string; translations: Record<Locale, Translation> };
+type PostSource = {
+  slug: string;
+  date: string;
+  /** Articles on this branch that are not translated yet only appear in the locales listed here. */
+  translations: { en: Translation } & Partial<Record<Locale, Translation>>;
+  /** Hand-built route outside src/lib/content/posts. */
+  custom?: boolean;
+};
 
-// Newest first. Every article has an English and a Serbian version in src/lib/content/posts/.
+// Newest first. Articles are English-only until a `<slug>.sr.md` file and an `sr` translation are added.
 const sources: PostSource[] = [
+  {
+    slug: "accessibility-from-the-first-component",
+    date: "2026-08-25",
+    translations: {
+      en: {
+        title: "Accessibility from the first component",
+        summary: "How different organizations can build accessibility into product planning, shared components, testing, and daily engineering work.",
+        tags: ["Accessibility", "Design systems", "Engineering"],
+      },
+    },
+  },
+  {
+    slug: "adding-bluesky-with-atproto",
+    date: "2026-08-22T13:00:00-06:00",
+    translations: {
+      en: {
+        title: "Adding Bluesky to this site with the AT Protocol",
+        summary: "How I used the public AT Protocol API to mix Bluesky posts into this journal without authentication or a backend.",
+        tags: ["AT Protocol", "Bluesky", "Svelte"],
+      },
+    },
+  },
+  {
+    slug: "ai-tools-in-2026",
+    date: "2026-08-22",
+    translations: {
+      en: {
+        title: "AI tools in 2026",
+        summary: "My current mix of coding agents, editors, terminals, connected services, and the growing work of maintaining the setup itself.",
+        tags: ["AI", "Tools", "Development"],
+      },
+    },
+  },
+  {
+    slug: "questrade-principal-engineer",
+    date: "2026-07-08",
+    custom: true,
+    translations: {
+      en: {
+        title: "A new chapter at Questrade",
+        summary: "Joining Questrade as a Principal Engineer to work on financial software and help engineering teams make sound technical decisions.",
+        tags: ["Career", "Engineering leadership", "Fintech"],
+      },
+    },
+  },
+  {
+    slug: "react-native-expo-one-stack",
+    date: "2026-03-08",
+    translations: {
+      en: {
+        title: "React Native and Expo, one stack that travels well",
+        summary: "A year with React Native and Expo for mobile and web, plus a small-app stack built with Clerk and Convex.",
+        tags: ["React Native", "Expo", "Mobile"],
+      },
+    },
+  },
   {
     slug: "neo",
     date: "2025-09-21",
@@ -29,6 +92,17 @@ const sources: PostSource[] = [
         title: "Neo Financial",
         summary: "Prelazim u Neo Financial kao Staff Software Developer i vraćam se u kanadski startap svet.",
         tags: ["Karijera", "Fintech"],
+      },
+    },
+  },
+  {
+    slug: "working-with-aws-mediatailor",
+    date: "2025-04-11",
+    translations: {
+      en: {
+        title: "Working with AWS MediaTailor",
+        summary: "How SCTE-35 markers, MediaTailor, and a Go ad decision service on ECS put ads into a video stream.",
+        tags: ["AWS", "Go", "Video"],
       },
     },
   },
@@ -130,19 +204,21 @@ const sources: PostSource[] = [
   },
 ];
 
-export const slugs = sources.map((source) => source.slug);
+/** Slugs rendered from Markdown by the journal [slug] route. */
+export const slugs = sources.filter((source) => !source.custom).map((source) => source.slug);
 
 export function getPosts(locale: Locale = defaultLocale): Post[] {
-  return sources.map((source) => {
+  return sources.flatMap((source) => {
     const translation = source.translations[locale];
-    return {
+    if (!translation) return [];
+    return [{
       slug: source.slug,
       locale,
       date: source.date,
       displayDate: formatDate(locale, source.date),
       url: localizePath(locale, `/journal/${source.slug}/`),
       ...translation,
-    };
+    }];
   });
 }
 

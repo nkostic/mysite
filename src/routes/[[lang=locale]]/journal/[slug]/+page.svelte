@@ -12,12 +12,12 @@
   const Article = $derived(data.Article);
 </script>
 
-<PageHead title={`${data.post.title} ${t.site.titleSuffix}`} description={data.post.summary} type="article" />
+<PageHead title={`${data.post.title} ${t.site.titleSuffix}`} description={data.post.summary} type="article" available={data.available} />
 
 <header class="site-header">
   <a class="mark" href={i18n.path("/")} aria-label={t.common.homeAria}>NK</a>
   <p>{t.article.journalLabel} / {data.post.displayDate}</p>
-  <div class="header-end"><LanguageSwitcher /><a class="back" href={i18n.path("/#journal")}><span aria-hidden="true">←</span> {t.common.allNotes}</a></div>
+  <div class="header-end"><LanguageSwitcher available={data.available} /><a class="back" href={i18n.path("/#journal")}><span aria-hidden="true">←</span> {t.common.allNotes}</a></div>
 </header>
 
 <main id="main-content" tabindex="-1">
