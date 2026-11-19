@@ -34,3 +34,7 @@ The static site is written to `dist/client` and served by a Cloudflare Worker wi
 ## Feature flags
 
 `src/lib/site-config.ts` controls the Bluesky page, Bluesky posts in the journal feed, and AT Protocol comments. Comments are off until the production steps in `docs/infra-checklist.md` are complete.
+
+## Archiving an article
+
+Add `archived: true` to the article's entry in `src/lib/posts.ts`. It disappears from the home page, journal, RSS feed and search, but its URL (and the old `/blog/<slug>` redirect) keeps working. The article page shows an "archived" notice, and a link to `/archive/` (`/sr/archive/`) appears on the journal page listing every archived article. Archived articles stay in the sitemap. Algolia may still hold the record, but archived hits are dropped on the client.

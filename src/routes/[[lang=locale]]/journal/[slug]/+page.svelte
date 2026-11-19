@@ -26,6 +26,7 @@
     <p class="eyebrow">{data.post.tags.join(" · ")}</p>
     <h1>{data.post.title}</h1>
     <p class="summary">{data.post.summary}</p>
+    {#if data.post.archived}<p class="archived-notice" role="note">{t.article.archivedNotice}</p>{/if}
   </header>
 
   <article class="prose" use:galleryImages>
@@ -58,6 +59,7 @@
   .eyebrow { margin: 0 0 34px; text-transform: uppercase; font-size: 11px; font-weight: 750; letter-spacing: .16em; }
   h1 { max-width: 900px; margin: 0; font-size: clamp(56px, 9vw, 126px); line-height: .84; letter-spacing: -.075em; text-transform: uppercase; }
   .summary { width: min(100%, 520px); margin: 48px 0 0 auto; font-size: clamp(18px, 2.2vw, 26px); line-height: 1.25; letter-spacing: -.025em; }
+  .archived-notice { max-width: 560px; margin: 36px 0 0; padding: 14px 16px; border: 2px solid; font-size: 13px; line-height: 1.45; }
   .prose { width: min(100%, 720px); min-width: 0; margin: 0 auto; padding: 72px 0 120px; overflow-wrap: break-word; font-family: Georgia, "Times New Roman", serif; font-size: clamp(18px, 1.55vw, 21px); line-height: 1.7; }
   .prose :global(h2) { margin: 2.4em 0 .65em; font-family: Inter, sans-serif; font-size: clamp(32px, 5vw, 58px); line-height: .95; letter-spacing: -.055em; }
   .prose :global(h3) { margin-top: 2em; font-family: Inter, sans-serif; font-size: 26px; letter-spacing: -.03em; }

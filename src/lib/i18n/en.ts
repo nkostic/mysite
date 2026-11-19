@@ -78,6 +78,18 @@ export const en = {
     journalLabel: "Journal",
     backToJournal: "Back to journal",
     unavailable: "Article unavailable.",
+    archivedNotice: "This article is archived. It stays here so links keep working, but it may be out of date.",
+  },
+  archive: {
+    link: "Archive",
+    title: "Archive",
+    description: "Older articles by Nenad Kostic that are no longer listed in the journal.",
+    headerLabel: "Archive",
+    eyebrow: "Retired from the journal",
+    heading: "Archive.",
+    intro: "Older notes that are no longer listed in the journal. They stay online so existing links keep working.",
+    back: "Back to journal",
+    empty: "Nothing has been archived yet.",
   },
   bluesky: {
     title: "Bluesky",

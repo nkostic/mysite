@@ -9,10 +9,18 @@ export type Post = {
   summary: string;
   tags: string[];
   url: string;
+  /** Archived articles keep their URL but are left out of the home page, journal, feed and search. */
+  archived: boolean;
 };
 
 type Translation = { title: string; summary: string; tags: string[] };
-type PostSource = { slug: string; date: string; translations: Record<Locale, Translation> };
+type PostSource = {
+  slug: string;
+  date: string;
+  /** Set to true to retire an article from the listings without breaking its URL. */
+  archived?: boolean;
+  translations: Record<Locale, Translation>;
+};
 
 // Newest first. Every article has an English and a Serbian version in src/lib/content/posts/.
 const sources: PostSource[] = [
@@ -130,22 +138,33 @@ const sources: PostSource[] = [
   },
 ];
 
+/** Every slug that has a page, archived or not. Routes, redirects and the sitemap use this so old links keep working. */
 export const slugs = sources.map((source) => source.slug);
 
-export function getPosts(locale: Locale = defaultLocale): Post[] {
-  return sources.map((source) => {
-    const translation = source.translations[locale];
-    return {
-      slug: source.slug,
-      locale,
-      date: source.date,
-      displayDate: formatDate(locale, source.date),
-      url: localizePath(locale, `/journal/${source.slug}/`),
-      ...translation,
-    };
-  });
+function build(locale: Locale): Post[] {
+  return sources.map((source) => ({
+    slug: source.slug,
+    locale,
+    date: source.date,
+    displayDate: formatDate(locale, source.date),
+    url: localizePath(locale, `/journal/${source.slug}/`),
+    archived: source.archived === true,
+    ...source.translations[locale],
+  }));
 }
 
+/** Articles shown on the home page, journal, feed and search. Archived articles are left out. */
+export function getPosts(locale: Locale = defaultLocale): Post[] {
+  return build(locale).filter((post) => !post.archived);
+}
+
+export function getArchivedPosts(locale: Locale = defaultLocale): Post[] {
+  return build(locale).filter((post) => post.archived);
+}
+
+export const hasArchive = sources.some((source) => source.archived);
+
+/** Looks up any article, including archived ones, so their pages keep rendering. */
 export function getPost(locale: Locale, slug: string): Post | undefined {
-  return getPosts(locale).find((post) => post.slug === slug);
+  return build(locale).find((post) => post.slug === slug);
 }
